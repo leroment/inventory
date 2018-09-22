@@ -7,6 +7,8 @@ import { HeaderComponent } from './shared/header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { appRoutes } from './routes'
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { ProductService } from './shared/services/product.service';
 
 @NgModule({
   declarations: [
@@ -16,9 +18,10 @@ import { appRoutes } from './routes'
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

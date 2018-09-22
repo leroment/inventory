@@ -1,3 +1,66 @@
-<p>
-  dashboard works!
-</p>
+<div class="jumbotron text-center">
+  <h1>Dashboard</h1>
+  <p class="lead">Check your customer orders, inventory listing and more.</p>
+  <hr class="my-4">
+</div>
+<div class="container">
+  <h2 class="text-center">Orders</h2> 
+  <div class="row">
+    <ngb-accordion class="col-md-12 text-center" #acc="ngbAccordion" activeIds="toggle-1, toggle-2, toggle-3">
+      <ngb-panel id="toggle-1" title="Customer 1">
+        <ng-template ngbPanelContent>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Product 1</td>
+                <td>Quantity 1</td>
+              </tr>
+            </tbody>
+          </table>
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel id="toggle-2" title="Customer 2">
+        <ng-template ngbPanelContent>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Product 2</td>
+                <td>Quantity 2</td>
+              </tr>
+            </tbody>
+          </table>
+        </ng-template>
+      </ngb-panel>
+      <ngb-panel id="toggle-3" title="Customer 3">
+          <ng-template ngbPanelContent>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Product</th>
+                  <th scope="col">Quantity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Product 3</td>
+                  <td>Quantity 3</td>
+                </tr>
+              </tbody>
+            </table>
+          </ng-template>
+        </ngb-panel>
+    </ngb-accordion>
+  </div>
+</div>
