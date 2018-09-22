@@ -3,14 +3,14 @@ export interface IProduct {
     name: string
 }
 
-export interface ICustomer {
-    id: number
-    name: string
-}
-
 export interface IOrder {
     id: number
     customer_id: number
+}
+
+export interface ICustomer {
+    id: number
+    name: string
 }
 
 export interface IOrderItem {

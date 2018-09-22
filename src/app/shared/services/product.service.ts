@@ -9,10 +9,18 @@ export class ProductService {
 const PRODUCTS: IProduct[] = [
     {
         id: 1,
-        name: "菜心"
+        name: "Book"
     },
     {
         id: 2,
-        name: "空心菜"   
+        name: "Toy"   
+    },
+    {
+        id: 3,
+        name: "Phone"
+    },
+    {
+        id: 4,
+        name: "Wallet"
     }
 ]
