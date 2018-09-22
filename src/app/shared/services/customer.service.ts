@@ -3,7 +3,7 @@ import { ICustomer } from "../models/inventory.model";
 import { Subject, Observable } from "rxjs";
 
 @Injectable()
-export class ProductService {
+export class CustomerService {
 
     getCustomers() : Observable<ICustomer[]>
     {

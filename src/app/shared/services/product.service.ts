@@ -1,9 +1,19 @@
 import { Injectable } from "@angular/core";
 import { IProduct } from "../models/inventory.model";
+import { Subject, Observable } from "rxjs";
 
 @Injectable()
 export class ProductService {
-    
+    getProducts(): Observable<IProduct[]> {
+        let subject = new Subject<IProduct[]>();
+        setTimeout(() => { subject.next(PRODUCTS); subject.complete(); },
+            100);
+        return subject;
+    }
+
+    getCustomer(id: number): IProduct {
+        return PRODUCTS.find(product => product.id === id);
+    }
 }
 
 const PRODUCTS: IProduct[] = [
@@ -13,7 +23,7 @@ const PRODUCTS: IProduct[] = [
     },
     {
         id: 2,
-        name: "Toy"   
+        name: "Toy"
     },
     {
         id: 3,
