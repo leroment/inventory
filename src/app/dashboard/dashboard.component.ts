@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ICustomer, IProduct } from '../shared/models/inventory.model';
+import { Component, OnInit, Input } from '@angular/core';
+import { ICustomer, IProduct, IOrder } from '../shared/models/inventory.model';
 import { CustomerService } from '../shared/services/customer.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -12,6 +12,9 @@ export class DashboardComponent implements OnInit {
 
   customers : ICustomer[];
   products : IProduct[];
+  order: IOrder[];
+
+  @Input() customer;
 
   constructor( private customerService : CustomerService, private route : ActivatedRoute ) {
 
@@ -20,7 +23,10 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     this.customers = this.route.snapshot.data['customers'];
     this.products = this.route.snapshot.data['products'];
+  }
 
+  getOrderItem()
+  {
   }
 
 }

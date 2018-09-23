@@ -1,20 +1,19 @@
 export interface ICustomer {
     customerId: number
     name: string
-    orders: IOrder[]
 }
 
 export interface IOrder {
     orderId: number
+    customer: ICustomer
     date: number
-    orderItems: IOrderItem[]
 }
 
 export interface IOrderItem {
     orderItemId: number
+    order: IOrder
     product: IProduct
     quantity: number
-    price: number
 }
 
 export interface IProduct {

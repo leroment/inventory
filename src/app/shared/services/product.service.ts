@@ -11,7 +11,7 @@ export class ProductService {
         return subject;
     }
 
-    getProduct(id: number): IProduct {
+    static getProduct(id: number): IProduct {
         return PRODUCTS.find(product => product.productId === id);
     }
 }
