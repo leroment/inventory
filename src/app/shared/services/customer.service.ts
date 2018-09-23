@@ -1,9 +1,14 @@
 import { Injectable } from "@angular/core";
 import { ICustomer } from "../models/inventory.model";
 import { Subject, Observable } from "rxjs";
+import { ProductService } from "./product.service";
 
 @Injectable()
 export class CustomerService {
+
+    constructor(private productService : ProductService) {
+        
+    }
 
     getCustomers() : Observable<ICustomer[]>
     {
@@ -15,30 +20,28 @@ export class CustomerService {
 
     getCustomer(id : number) : ICustomer
     {
-        return CUSTOMERS.find(customer => customer.id === id);
+        return CUSTOMERS.find(customer => customer.customerId === id);
     }
-
     
-    
-
-
 }
 
 const CUSTOMERS: ICustomer[] = [
     {
-        id: 1,
-        name: "Microsoft"
-    },
-    {
-        id: 2,
-        name: "Apple"   
-    },
-    {
-        id: 3,
-        name: "Amazon"
-    },
-    {
-        id: 4,
-        name: "Samsung"
+        customerId: 1,
+        name: "Microsoft",
+        orders: [
+            {
+                orderId: 1,
+                date: 3,
+                orderItems: [
+                    {
+                        orderItemId: 1,
+                        product: this.productService.getProduct(1),
+                        quantity: 3,
+                        price: 4
+                    }
+                ]
+            }
+        ]
     }
 ]

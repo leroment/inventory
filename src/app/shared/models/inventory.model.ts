@@ -1,22 +1,23 @@
-export interface IProduct {
-    id: number
+export interface ICustomer {
+    customerId: number
     name: string
+    orders: IOrder[]
 }
 
 export interface IOrder {
-    id: number
-    customer_id: number
-}
-
-export interface ICustomer {
-    id: number
-    name: string
+    orderId: number
+    date: number
+    orderItems: IOrderItem[]
 }
 
 export interface IOrderItem {
-    id: number
-    order_id: number
-    product_id: number
+    orderItemId: number
+    product: IProduct
     quantity: number
     price: number
+}
+
+export interface IProduct {
+    productId: number
+    name: string
 }

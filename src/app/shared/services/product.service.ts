@@ -11,26 +11,26 @@ export class ProductService {
         return subject;
     }
 
-    getCustomer(id: number): IProduct {
-        return PRODUCTS.find(product => product.id === id);
+    getProduct(id: number): IProduct {
+        return PRODUCTS.find(product => product.productId === id);
     }
 }
 
 const PRODUCTS: IProduct[] = [
     {
-        id: 1,
+        productId: 1,
         name: "Book"
     },
     {
-        id: 2,
+        productId: 2,
         name: "Toy"
     },
     {
-        id: 3,
+        productId: 3,
         name: "Phone"
     },
     {
-        id: 4,
+        productId: 4,
         name: "Wallet"
     }
 ]
