@@ -23,7 +23,7 @@ export class OrderItemService {
 const ORDERITEMS: IOrderItem[] = [
     {
         orderItemId: 1,
-        product: ProductService.getProduct(3),
+        product: ProductService.getProduct(4),
         order: OrderService.getOrder(1),
         quantity: 3
     },
@@ -35,7 +35,7 @@ const ORDERITEMS: IOrderItem[] = [
     },
     {
         orderItemId: 3,
-        product: ProductService.getProduct(1),
+        product: ProductService.getProduct(2),
         order: OrderService.getOrder(1),
         quantity: 2
     }

@@ -49,7 +49,11 @@ const CUSTOMERS: ICustomer[] = [
         name: "Apple"
     },
     {
-        customerId: 1,
+        customerId: 3,
         name: "Samsung"
+    },
+    {
+        customerId: 4,
+        name: "Amazon"   
     }
 ]

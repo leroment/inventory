@@ -14,6 +14,7 @@ import { CustomerListResolver } from './shared/services/customer-list-resolver.s
 import { ProductListResolver } from './shared/services/product-list-resolver.service';
 import { OrderService } from './shared/services/order.service';
 import { OrderItemService } from './shared/services/order-item.service';
+import { OrderItemListResolver } from './shared/services/order-item-list-resolver.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { OrderItemService } from './shared/services/order-item.service';
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot()
   ],
-  providers: [ProductService, CustomerService, OrderService, OrderItemService, CustomerListResolver, ProductListResolver],
+  providers: [ProductService, CustomerService, OrderService, OrderItemService, CustomerListResolver, ProductListResolver, OrderItemListResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
