@@ -16,12 +16,14 @@ import { OrderService } from './shared/services/order.service';
 import { OrderItemService } from './shared/services/order-item.service';
 import { OrderItemListResolver } from './shared/services/order-item-list-resolver.service';
 import { OrderListResolver } from './shared/services/order-list-resolver.service';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    DashboardComponent
+    DashboardComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
