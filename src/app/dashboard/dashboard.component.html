@@ -6,20 +6,35 @@
 <div class="container">
   <h2 class="text-center">Orders</h2>
   <div class="row">
-    <table class="table table-hover" style="text-align: center">
+    <table class="table table-hover" style="text-align: center" *ngFor="let customer of customers">
       <thead>
+        <tr>
+          <th colspan="2" class="table-primary">Customer:&nbsp; {{customer.name}}</th>
+        </tr>
         <tr class="table-primary">
           <th scope="col">Product</th>
           <th colspan="4" scope="col">Quantity</th>
         </tr>
       </thead>
-      <tbody>
-        <tr>
-          <td colspan="2">Column</td>
-        </tr>
-        <tr *ngFor="let product of products">
-          <td>{{product.name}}</td>
-          <td>{{getOrderItemForProduct(product.productId) ? getOrderItemForProduct(product.productId).quantity : 0}}</td>
-        </tr>
-      </tbody>
+      <ng-container *ngIf="getOrdersByCustomer(customer.customerId) != 0; else noOrders">
+        <tbody *ngFor="let order of getOrdersByCustomer(customer.customerId); let i = index" [attr.data-index]="i">
+          <tr>
+            <td colspan="2">Order {{order.orderId}}</td>
+          </tr>
+          <tr *ngFor="let product of products">
+            <td>{{product.name}}</td>
+            <td>{{getOrderItemForProductForOrder(product.productId, order.orderId) ?
+              getOrderItemForProductForOrder(product.productId, order.orderId).quantity : 0}}</td>
+          </tr>
+        </tbody>
+      </ng-container>
+
+      <ng-template #noOrders>
+        <tbody>
+          <tr style="height: 500px">
+            <td colspan="2">No orders</td>
+          </tr>
+        </tbody>
+      </ng-template>
+
     </table>

@@ -36,7 +36,14 @@ const ORDERITEMS: IOrderItem[] = [
     {
         orderItemId: 3,
         product: ProductService.getProduct(2),
-        order: OrderService.getOrder(1),
+        order: OrderService.getOrder(2),
         quantity: 2
-    }
+    },
+    {
+        orderItemId: 4,
+        product: ProductService.getProduct(3),
+        order: OrderService.getOrder(2),
+        quantity: 9
+    },
+
 ]

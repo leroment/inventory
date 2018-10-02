@@ -3,6 +3,7 @@ import { ICustomer, IProduct, IOrder, IOrderItem } from '../shared/models/invent
 import { CustomerService } from '../shared/services/customer.service';
 import { ActivatedRoute } from '@angular/router';
 import { OrderItemService } from '../shared/services/order-item.service';
+import { OrderService } from '../shared/services/order.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,11 +15,12 @@ export class DashboardComponent implements OnInit {
   customers : ICustomer[];
   products : IProduct[];
   orderItems: IOrderItem[];
+  orders: IOrder[];
 
 
   @Input() customer;
 
-  constructor( private customerService : CustomerService, private orderItemService : OrderItemService, private route : ActivatedRoute ) {
+  constructor( private customerService : CustomerService, private orderService: OrderService, private orderItemService : OrderItemService, private route : ActivatedRoute ) {
 
    }
 
@@ -26,13 +28,31 @@ export class DashboardComponent implements OnInit {
     this.customers = this.route.snapshot.data['customers'];
     this.products = this.route.snapshot.data['products'];
     this.orderItems = this.route.snapshot.data['orderItems'];
-
-
+    this.orders = this.route.snapshot.data['orders'];
   }
 
-  getOrderItemForProduct(id: number)
+  getOrderItemForProductForOrder(productId: number, orderId: number)
   {
-    return this.orderItems.find(orderItem => orderItem.product.productId === id);
+    return this.orderItems.find(orderItem => orderItem.product.productId === productId && orderItem.order.orderId === orderId);
+  }
+
+
+  getOrderItemsForOrder(orderId: number)
+  {
+    return this.orderItems.filter(orderItem => orderItem.order.orderId === orderId);
+  }
+
+  getOrdersByCustomer(customerId: number)
+  {
+      let or = this.orders.filter(order => order.customer.customerId === customerId);
+
+      if (or.length == 0)
+      {
+        return 0;
+      }
+
+      return or;
+
   }
 
 }
