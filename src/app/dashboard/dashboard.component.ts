@@ -31,53 +31,9 @@ export class DashboardComponent implements OnInit {
     this.orders = this.route.snapshot.data['orders'];
   }
 
-  getOrderItemForProductForOrder(productId: number, orderId: number)
-  {
-    return this.orderItems.find(orderItem => orderItem.product.productId === productId && orderItem.order.orderId === orderId);
-  }
-
   getOrderItemForProductForOrderForCustomer(product: IProduct, order: IOrder, customer: ICustomer)
   {
-    let _orderItem = this.getOrderItemForProductForOrder(product.productId, order.orderId);
-
-    if (!_orderItem)
-    {
-      return null;
-    }
-
-    let c = _orderItem.order.customers.find(customer => customer.customerId === customer.customerId);
-    
-    if (!c)
-    {
-      return null;
-    }
-
-    return this.orderItems.find(orderItem => orderItem.product.productId === product.productId && orderItem.order.orderId === order.orderId
-      && orderItem.order.customers[c.customerId - 1].customerId === customer.customerId);
-
+    return this.orderItems.find(orderItem => orderItem.product.productId === product.productId && orderItem.order.orderId === order.orderId && orderItem.customer.customerId === customer.customerId);
   }
-
-  getCustomerForOrder(order: IOrder, customer: ICustomer)
-  {
-    return order.customers.find(customer => customer.customerId === customer.customerId);
-  }
-
-  getOrderItemsForOrder(orderId: number)
-  {
-    return this.orderItems.filter(orderItem => orderItem.order.orderId === orderId);
-  }
-
-  // getOrdersByCustomer(customerId: number)
-  // {
-  //     let or = this.orders.filter(order => order.customer.customerId === customerId);
-
-  //     if (or.length == 0)
-  //     {
-  //       return 0;
-  //     }
-
-  //     return or;
-
-  // }
 
 }
