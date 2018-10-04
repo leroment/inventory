@@ -23,12 +23,14 @@ export class OrderService {
 const ORDERS: IOrder[] = [
     {
         orderId: 1,
-        customer: CustomerService.getCustomer(2),
         date: 2
     },
     {
         orderId: 2,
-        customer: CustomerService.getCustomer(2),
         date: 3
+    },
+    {
+        orderId: 3,
+        date: 4
     }
 ]

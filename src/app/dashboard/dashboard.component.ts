@@ -31,28 +31,9 @@ export class DashboardComponent implements OnInit {
     this.orders = this.route.snapshot.data['orders'];
   }
 
-  getOrderItemForProductForOrder(productId: number, orderId: number)
+  getOrderItemForProductForOrderForCustomer(product: IProduct, order: IOrder, customer: ICustomer)
   {
-    return this.orderItems.find(orderItem => orderItem.product.productId === productId && orderItem.order.orderId === orderId);
-  }
-
-
-  getOrderItemsForOrder(orderId: number)
-  {
-    return this.orderItems.filter(orderItem => orderItem.order.orderId === orderId);
-  }
-
-  getOrdersByCustomer(customerId: number)
-  {
-      let or = this.orders.filter(order => order.customer.customerId === customerId);
-
-      if (or.length == 0)
-      {
-        return 0;
-      }
-
-      return or;
-
+    return this.orderItems.find(orderItem => orderItem.product.productId === product.productId && orderItem.order.orderId === order.orderId && orderItem.customer.customerId === customer.customerId);
   }
 
 }

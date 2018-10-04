@@ -6,7 +6,7 @@
 <div class="container">
   <h2 class="text-center">Orders</h2>
   <div class="row">
-    <table class="table table-hover" style="text-align: center" *ngFor="let customer of customers">
+    <!-- <table class="table table-hover" style="text-align: center" *ngFor="let customer of customers">
       <thead>
         <tr>
           <th colspan="2" class="table-primary">Customer:&nbsp; {{customer.name}}</th>
@@ -37,4 +37,27 @@
         </tbody>
       </ng-template>
 
+    </table> -->
+
+    <table class="table table-hover" style="text-align: center" *ngFor="let order of orders">
+      <thead>
+        <tr>
+          <th>Order:{{order.orderId}}</th>
+          <th *ngFor="let product of products; let i = index" [attr.data-index]="i">{{product.name}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let customer of customers">
+          <tr>
+            <th>{{customer.name}}</th>
+            <ng-container *ngFor="let product of products">
+              <td>{{getOrderItemForProductForOrderForCustomer(product, order, customer) ?
+                getOrderItemForProductForOrderForCustomer(product, order,
+                customer).quantity : 0}}</td>
+            </ng-container>
+          </tr>
+        </ng-container>
+      </tbody>
     </table>
+
+  </div>
