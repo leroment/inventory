@@ -51,9 +51,9 @@
           <tr>
             <th>{{customer.name}}</th>
             <ng-container *ngFor="let product of products">
-              <td>{{getOrderItemForProductForOrderForCustomer(product.productId, order.orderId, customer.customerId) ?
-                getOrderItemForProductForOrderForCustomer(product.productId, order.orderId,
-                customer.customerId).quantity : 0}}</td>
+              <td>{{getOrderItemForProductForOrderForCustomer(product, order, customer) ?
+                getOrderItemForProductForOrderForCustomer(product, order,
+                customer).quantity : 0}}</td>
             </ng-container>
           </tr>
         </ng-container>

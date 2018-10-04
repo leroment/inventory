@@ -5,7 +5,7 @@ export interface ICustomer {
 
 export interface IOrder {
     orderId: number
-    customer: ICustomer
+    customers: ICustomer[]
     date: number
 }
 
