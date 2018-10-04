@@ -23,24 +23,48 @@ export class OrderItemService {
 const ORDERITEMS: IOrderItem[] = [
     {
         orderItemId: 1,
-        product: ProductService.getProduct(4),
+        product: ProductService.getProduct(1),
         order: OrderService.getOrder(1),
         quantity: 3
     },
     {
         orderItemId: 2,
-        product: ProductService.getProduct(1),
+        product: ProductService.getProduct(2),
         order: OrderService.getOrder(1),
         quantity: 4
     },
     {
         orderItemId: 3,
-        product: ProductService.getProduct(2),
+        product: ProductService.getProduct(3),
         order: OrderService.getOrder(2),
         quantity: 2
     },
     {
         orderItemId: 4,
+        product: ProductService.getProduct(4),
+        order: OrderService.getOrder(2),
+        quantity: 9
+    },
+    {
+        orderItemId: 5,
+        product: ProductService.getProduct(4),
+        order: OrderService.getOrder(1),
+        quantity: 3
+    },
+    {
+        orderItemId: 6,
+        product: ProductService.getProduct(1),
+        order: OrderService.getOrder(1),
+        quantity: 4
+    },
+    {
+        orderItemId: 7,
+        product: ProductService.getProduct(2),
+        order: OrderService.getOrder(2),
+        quantity: 2
+    },
+    {
+        orderItemId: 8,
         product: ProductService.getProduct(3),
         order: OrderService.getOrder(2),
         quantity: 9

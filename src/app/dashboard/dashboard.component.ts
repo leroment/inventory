@@ -36,6 +36,11 @@ export class DashboardComponent implements OnInit {
     return this.orderItems.find(orderItem => orderItem.product.productId === productId && orderItem.order.orderId === orderId);
   }
 
+  getOrderItemForProductForOrderForCustomer(productId: number, orderId: number, customerId: number)
+  {
+    return this.orderItems.find(orderItem => orderItem.product.productId === productId && orderItem.order.orderId === orderId 
+      && orderItem.order.customer.customerId === customerId);
+  }
 
   getOrderItemsForOrder(orderId: number)
   {
