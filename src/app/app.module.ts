@@ -17,6 +17,7 @@ import { OrderItemService } from './shared/services/order-item.service';
 import { OrderItemListResolver } from './shared/services/order-item-list-resolver.service';
 import { OrderListResolver } from './shared/services/order-list-resolver.service';
 import { ProductsComponent } from './products/products.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ProductsComponent } from './products/products.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AngularFontAwesomeModule
   ],
   providers: [ProductService, CustomerService, OrderService, OrderItemService, CustomerListResolver, ProductListResolver,
      OrderItemListResolver, OrderListResolver],
