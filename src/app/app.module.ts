@@ -18,6 +18,8 @@ import { OrderItemListResolver } from './shared/services/order-item-list-resolve
 import { OrderListResolver } from './shared/services/order-list-resolver.service';
 import { ProductsComponent } from './products/products.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { ProductsService } from './products/products.service';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -28,12 +30,13 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot(),
     AngularFontAwesomeModule
   ],
   providers: [ProductService, CustomerService, OrderService, OrderItemService, CustomerListResolver, ProductListResolver,
-     OrderItemListResolver, OrderListResolver],
+     OrderItemListResolver, OrderListResolver, ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,7 +9,7 @@ import { map, catchError } from 'rxjs/operators';
 })
 export class ProductsService {
 
-  baseUrl: string = '/api/products';
+  baseUrl: string = 'http://localhost:1572/api/products';
 
   constructor(private http: Http) { }
 
