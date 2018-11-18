@@ -20,13 +20,15 @@ import { ProductsComponent } from './products/products.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ProductsService } from './products/products.service';
 import { HttpModule } from '@angular/http';
+import { AddProductComponent } from './shared/modals/add-product/add-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     DashboardComponent,
-    ProductsComponent
+    ProductsComponent,
+    AddProductComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +39,9 @@ import { HttpModule } from '@angular/http';
   ],
   providers: [ProductService, CustomerService, OrderService, OrderItemService, CustomerListResolver, ProductListResolver,
      OrderItemListResolver, OrderListResolver, ProductsService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    AddProductComponent
+  ]
 })
 export class AppModule { }
