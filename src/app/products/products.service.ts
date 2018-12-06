@@ -27,6 +27,16 @@ export class ProductsService {
       .pipe(map((res: Response) => res.json()),
       catchError(this.handleError));
   }
+  
+  insertProduct(product: IProduct) : Observable<IProduct> {
+    return this.http.post(this.baseUrl, product)
+      .pipe(map((res: Response) => {
+        const data = res.json();
+        console.log('insertProduct status: ' + data.status);
+        return data.product;
+      }),
+      catchError(this.handleError));
+  }
 
   private handleError(error: any) {
     console.error('server error:', error);

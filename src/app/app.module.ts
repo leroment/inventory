@@ -21,6 +21,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { ProductsService } from './products/products.service';
 import { HttpModule } from '@angular/http';
 import { AddProductComponent } from './shared/modals/add-product/add-product.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,9 @@ import { AddProductComponent } from './shared/modals/add-product/add-product.com
     HttpModule,
     RouterModule.forRoot(appRoutes),
     NgbModule.forRoot(),
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [ProductService, CustomerService, OrderService, OrderItemService, CustomerListResolver, ProductListResolver,
      OrderItemListResolver, OrderListResolver, ProductsService],

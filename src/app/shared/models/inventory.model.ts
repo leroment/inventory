@@ -17,6 +17,6 @@ export interface IOrderItem {
 }
 
 export interface IProduct {
-    productId: number
+    productId?: number
     name: string
 }
